@@ -13,46 +13,50 @@
 }
 
 /* ============================================
-   COLOR SCHEME (EXACT SPECIFICATION)
+   COLOR SCHEME - PROFESSIONAL BLUE-GRAY THEME
    ============================================ */
 :root {
-  /* Primary Colors */
-  --color-primary: #0F172A;
-  /* Deep Navy Blue */
-  --color-secondary: #1E3A8A;
-  /* Muted Royal Blue */
-  --color-accent: #14B8A6;
-  /* Soft Teal */
+  /* Primary Colors - Professional Blue-Gray Palette */
+  --color-primary: #1e293b;
+  /* Slate 800 - Deep professional blue-gray */
+  --color-secondary: #334155;
+  /* Slate 700 - Medium blue-gray */
+  --color-accent: #0ea5e9;
+  /* Sky 500 - Vibrant but professional blue */
 
-  /* Background & Surface */
-  --color-background: #F8FAFC;
-  /* Off-white */
-  --color-surface: #FFFFFF;
-  /* White */
-  --color-surface-hover: #F1F5F9;
-  /* Subtle hover state */
+  /* Background & Surface - Layered Depth */
+  --color-background: #0f172a;
+  /* Slate 900 - Dark professional background */
+  --color-surface: #1e293b;
+  /* Slate 800 - Card/surface color */
+  --color-surface-hover: #334155;
+  /* Slate 700 - Hover state */
+  --color-surface-elevated: #475569;
+  /* Slate 600 - Elevated elements */
 
-  /* Text Colors */
-  --color-text-primary: #111827;
-  /* Primary text */
-  --color-text-muted: #6B7280;
-  /* Muted text */
-  --color-text-light: #9CA3AF;
-  /* Light text */
+  /* Text Colors - High Contrast for Readability */
+  --color-text-primary: #f1f5f9;
+  /* Slate 100 - Primary text on dark */
+  --color-text-muted: #cbd5e1;
+  /* Slate 300 - Muted text */
+  --color-text-light: #94a3b8;
+  /* Slate 400 - Light/disabled text */
 
-  /* Status Colors */
-  --color-success: #16A34A;
-  /* Green */
-  --color-error: #DC2626;
-  /* Red */
-  --color-warning: #F59E0B;
-  /* Orange */
-  --color-info: #3B82F6;
-  /* Blue */
+  /* Status Colors - Professional & Accessible */
+  --color-success: #10b981;
+  /* Emerald 500 - Success green */
+  --color-error: #ef4444;
+  /* Red 500 - Error red */
+  --color-warning: #f59e0b;
+  /* Amber 500 - Warning orange */
+  --color-info: #3b82f6;
+  /* Blue 500 - Info blue */
 
-  /* Borders & Dividers */
-  --color-border: #E5E7EB;
-  --color-border-dark: #D1D5DB;
+  /* Borders & Dividers - Subtle Separation */
+  --color-border: #334155;
+  /* Slate 700 - Borders */
+  --color-border-dark: #475569;
+  /* Slate 600 - Stronger borders */
 
   /* Spacing System */
   --spacing-xs: 0.25rem;
@@ -80,10 +84,10 @@
   --radius-xl: 1rem;
   /* 16px */
 
-  /* Shadows - Subtle */
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  /* Shadows - Enhanced for Dark Theme */
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 12px -1px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 10px 20px -3px rgba(0, 0, 0, 0.7);
 
   /* Transitions */
   --transition-fast: 0.15s ease;
@@ -159,7 +163,7 @@ body {
 .page-title {
   font-size: var(--font-size-3xl);
   font-weight: var(--font-weight-bold);
-  color: var(--color-primary);
+  color: var(--color-text-primary);
   margin-bottom: var(--spacing-sm);
 }
 
@@ -179,7 +183,7 @@ h5,
 h6 {
   font-weight: var(--font-weight-semibold);
   line-height: 1.2;
-  color: var(--color-primary);
+  color: var(--color-text-primary);
 }
 
 h1 {
@@ -249,23 +253,23 @@ p {
 
 /* Button Variants */
 .btn-primary {
-  background-color: var(--color-primary);
+  background-color: var(--color-accent);
   color: white;
 }
 
 .btn-primary:hover:not(:disabled) {
-  background-color: var(--color-secondary);
+  background-color: #0284c7;
   transform: translateY(-1px);
   box-shadow: var(--shadow-md);
 }
 
 .btn-secondary {
-  background-color: var(--color-secondary);
-  color: white;
+  background-color: var(--color-surface-elevated);
+  color: var(--color-text-primary);
 }
 
 .btn-secondary:hover:not(:disabled) {
-  background-color: var(--color-primary);
+  background-color: #64748b;
   transform: translateY(-1px);
   box-shadow: var(--shadow-md);
 }
@@ -276,7 +280,7 @@ p {
 }
 
 .btn-accent:hover:not(:disabled) {
-  background-color: #0F9488;
+  background-color: #0284c7;
   transform: translateY(-1px);
   box-shadow: var(--shadow-md);
 }
@@ -289,7 +293,8 @@ p {
 
 .btn-outline:hover:not(:disabled) {
   background-color: var(--color-surface-hover);
-  border-color: var(--color-primary);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
 }
 
 .btn-success {
@@ -332,6 +337,7 @@ p {
   border-radius: var(--radius-lg);
   padding: var(--spacing-lg);
   transition: all var(--transition-base);
+  box-shadow: var(--shadow-sm);
 }
 
 .card:hover {
@@ -347,7 +353,7 @@ p {
 .card-title {
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-semibold);
-  color: var(--color-primary);
+  color: var(--color-text-primary);
   margin-bottom: var(--spacing-xs);
 }
 
@@ -396,8 +402,8 @@ p {
 .form-select:focus,
 .form-textarea:focus {
   outline: none;
-  border-color: var(--color-secondary);
-  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.15);
 }
 
 .form-textarea {
@@ -448,8 +454,8 @@ table {
 }
 
 thead {
-  background-color: var(--color-primary);
-  color: white;
+  background-color: var(--color-surface-elevated);
+  color: var(--color-text-primary);
 }
 
 th {
@@ -484,6 +490,8 @@ tbody tr:last-child td {
   position: sticky;
   top: 0;
   z-index: 100;
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(8px);
 }
 
 .header-content {
@@ -495,8 +503,11 @@ tbody tr:last-child td {
 .header-logo {
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
-  color: var(--color-primary);
+  color: var(--color-text-primary);
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
 }
 
 .header-nav {
@@ -517,7 +528,7 @@ tbody tr:last-child td {
 
 .nav-link:hover,
 .nav-link.active {
-  color: var(--color-primary);
+  color: var(--color-accent);
   background-color: var(--color-surface-hover);
 }
 
